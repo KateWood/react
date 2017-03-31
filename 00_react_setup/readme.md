@@ -49,11 +49,11 @@ We're going to be working with ReactJS ALL DAY today. Let's start off with a lit
 	OR  
 	You can also play with code inline between script tags like this:
 	
-	  ```js
-	  <script type="text/babel"> 
-	    // your code in here`  
-	  </script>
-	  ``` 
+```jsx
+<script type="text/babel"> 
+  // your code in here`  
+</script>
+``` 
 
 - Let's create a `react-tutorial` directory and an _index.html_ inside of it.
 
