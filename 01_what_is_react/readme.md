@@ -1,6 +1,6 @@
 # Intro to [React](https://facebook.github.io/react/docs/getting-started.html)
 
-![](react-opti.png)
+![](assets/react-opti.png)
 
 ## SWBAT
 * Explain the basic components of React.JS like: JSX, Babel, Virtual DOM, Components, and Props
