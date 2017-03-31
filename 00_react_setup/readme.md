@@ -59,7 +59,7 @@ We're going to be working with ReactJS ALL DAY today. Let's start off with a lit
 
 - Go to [this page](https://facebook.github.io/react/downloads/single-file-example.html), view the source (right click -> View Page Source). Let's update our _index.html_ to look like that!
 
-- We are going to put our JS code in a file and include it like this `<script type="text/babel" src="js/app.js"></script>` - this way we will have syntax highlighting. **Create** the `js` directory and **touch** an `app.js` file inside of it.
+- We are going to put our JS code in a file and include it like this `<script type="text/babel" src="js/app.jsx"></script>` - this way we will have syntax highlighting. **Create** the `js` directory and **touch** an `app.jsx` file inside of it. Notice that the file extension is not simply `.js`!
 	
 - Our page will need to be served up by a server, so spin up your favorite server. I'll use [http-server](https://www.npmjs.com/package/http-server).
 	- Run the server with `http-server` from the root of the react-tutorial directory. Notice that we're not working with port 3000 anymore!
