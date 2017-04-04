@@ -7,5 +7,5 @@
 | 11:30	| 12:45 | TTT Walkthrough | Gus		|
 | 12:45	| 2:00  | *Lunch* |		|
 | 2:00 	| 2:15  | *Stand Ups* |		|
-| 2:15		| 3:30	 |	API? Webpack? IDK!		| Kate	|
-| 3:45		| 5:00	 | Group Lab? Solo lab? Pair lab? IDK!	| Kate	|
+| 2:15		| 3:30	 |	Build React Boilerplate		| Kate	|
+| 3:45		| 5:00	 | Lab	| Kate	|
