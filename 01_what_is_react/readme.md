@@ -28,7 +28,7 @@ React is a new generation front end framework, made by Facebook. It turns what w
 ### JSX
 JSX is a JavaScript extension that adds XML syntax to JavaScript. This allows us to return HTML (views) inside our JavaScript code.
 
-Browsers do not run JSX natively, so we need to transpile with [Babel](https://babeljs.io/).
+Browsers do not run JSX natively, so we need to transpile our code with [Babel](https://babeljs.io/).
 
 ### Virtual DOM
 
@@ -45,7 +45,7 @@ We name components
 var MyTitle = React.createClass({
   render: function () {
     return (
-	   <h1>My Title component</h1>
+      <h1>My Title component</h1>
     );
   }
 });
@@ -159,8 +159,8 @@ var people = [
 ]
 ```
 
-Step 1: 
-Practice writing your first component. This is hard coded:
+Step 1:  
+Let's practice writing our first component
 
 ```jsx
 var App = React.createClass({
@@ -184,11 +184,12 @@ ReactDOM.render(
 );
 ```
 
-Let's spin up `http-server` and check it out in the browser.
+Let's get our `http-server` running and check out our progress in the browser!
 
 > If your browser is still showing "Hello, world!" do a hard refresh on the browser window (⌘ ⇧ r).
 
-Step 2: We need to extract the component from the 'app' and then use props to bind to the array
+Step 2:  
+We need to extract the component from the 'app' and then use props to bind to the array
 
 ```jsx
 var Card = React.createClass({
@@ -261,9 +262,30 @@ var App = React.createClass({
 ```
 
 ## Resources
-Great explanation of why you'd use webpack and babel, and what they do: 
+
+### Webpacks and Babel
+Great explanation of why you'd use both of them, and what they do: 
 
 * [https://tylermcginnis.com/react-js-tutorial-1-5-utilizing-webpack-and-babel-to-build-a-react-js-app-5f804d729d3b](https://tylermcginnis.com/react-js-tutorial-1-5-utilizing-webpack-and-babel-to-build-a-react-js-app-5f804d729d3b)
+
+### Flux
+[Flux](https://facebook.github.io/flux/docs/overview.html) is an architecture that Facebook uses internally when working with React. It is not a framework or a library. It is simply a new kind of architecture that complements React and the concept of Unidirectional Data Flow.
+
+That said, Facebook does provide a repo that includes a Dispatcher library. The dispatcher is a sort of global pub/sub handler that broadcasts payloads to registered callbacks.
+
+A typical Flux architecture will leverage this Dispatcher library, along with NodeJS’s EventEmitter module in order to set up an event system that helps manage an applications state.
+
+For a better explaination look here: [What is Flux?](http://fluxxor.com/what-is-flux.html)
+
+There are several alterative implementations including: Reflux, Redux, and Alt.
+
+Which one to pick? 
+[this](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux) is an interesting article about redux vs flux.
+
+And [Comparing all of them](http://jamesknelson.com/which-flux-implementation-should-i-use-with-react/).
+
+
+
 
 ## Conclusion
 
