@@ -28,7 +28,7 @@ React is a new generation front end framework, made by Facebook. It turns what w
 ### JSX
 JSX is a JavaScript extension that adds XML syntax to JavaScript. This allows us to return HTML (views) inside our JavaScript code.
 
-Browsers do not run JSX natively, so we need to transpile with [Babel](https://babeljs.io/).
+Browsers do not run JSX natively, so we need to transpile our code with [Babel](https://babeljs.io/).
 
 ### Virtual DOM
 
@@ -43,12 +43,12 @@ We name components
 
 ```jsx
 var MyTitle = React.createClass({
-	render: function () {
-	   	return (
-	       <h1>My Title component</h1>
-		);
-	}
-})
+  render: function () {
+    return (
+      <h1>My Title component</h1>
+    );
+  }
+});
 ```
 
 Then we can reference them in JSX like this:
@@ -85,7 +85,7 @@ Other things to know about:
 
 * [Babel](https://babeljs.io/) is a JS transpiler.
 
-* [Flux](https://facebook.github.io/flux/docs/overview.html) is an architecture that Facebook uses internally when working with React. It is not a framework or a library. It is simply a new kind of architecture that complements React and the concept of Unidirectional Data Flow.
+<!--* [Flux](https://facebook.github.io/flux/docs/overview.html) is an architecture that Facebook uses internally when working with React. It is not a framework or a library. It is simply a new kind of architecture that complements React and the concept of Unidirectional Data Flow.
 
 	That said, Facebook does provide a repo that includes a Dispatcher library. The dispatcher is a sort of global pub/sub handler that broadcasts payloads to registered callbacks.
 
@@ -98,7 +98,7 @@ Other things to know about:
 	Which one to pick? 
 [this](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux) is an interesting article about redux vs flux.
 
-	And [Comparing all of them](http://jamesknelson.com/which-flux-implementation-should-i-use-with-react/).
+	And [Comparing all of them](http://jamesknelson.com/which-flux-implementation-should-i-use-with-react/).-->
 
 ## Practice
 
@@ -137,46 +137,46 @@ Clear out `app.jsx`. We're going to start over in that file. Let's hard-code an 
 ```jsx
 var people = [
   {
-    "name": "Tom",
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/craigrcoles/128.jpg",
-    "id": 0
+    "name"   : "Tom",
+    "avatar" : "https://s3.amazonaws.com/uifaces/faces/twitter/craigrcoles/128.jpg",
+    "id"     : 0
   },
   {
-    "name": "Dan",
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/ivanfilipovbg/128.jpg",
-    "id": 1
+    "name"   : "Dan",
+    "avatar" : "https://s3.amazonaws.com/uifaces/faces/twitter/ivanfilipovbg/128.jpg",
+    "id"     : 1
   },
   {
-    "name": "Ben",
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/abovefunction/128.jpg",
-    "id": 2
+    "name"   : "Ben",
+    "avatar" : "https://s3.amazonaws.com/uifaces/faces/twitter/abovefunction/128.jpg",
+    "id"     : 2
   },
   {
-    "name": "Alan",
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/ryandownie/128.jpg",
-    "id": 3
+    "name"   : "Alan",
+    "avatar" : "https://s3.amazonaws.com/uifaces/faces/twitter/ryandownie/128.jpg",
+    "id"     : 3
   }
 ]
 ```
 
-Step 1: 
-Practice writing your first component. This is hard coded:
+Step 1:  
+Let's practice writing our first component
 
 ```jsx
 var App = React.createClass({
-	getInitialState: function() {
-		return people[0]
-	},
+  getInitialState : function () {
+    return people[0];
+  },
 
-	render : function () {
-		return (
-			<div className="jumbotron">
-				<h1>{this.state.name}</h1>
-				<img src={this.state.avatar}/>
-			</div>
-		)
-	}
-})
+  render : function () {
+    return (
+      <div className="jumbotron">
+        <h1>{this.state.name}</h1>
+        <img src={this.state.avatar}/>
+      </div>
+    );
+  }
+});
 
 ReactDOM.render(
   <App></App>,
@@ -184,45 +184,46 @@ ReactDOM.render(
 );
 ```
 
-Let's spin up `http-server` and check it out in the browser.
+Let's get our `http-server` running and check out our progress in the browser!
 
 > If your browser is still showing "Hello, world!" do a hard refresh on the browser window (⌘ ⇧ r).
 
-Step 2: We need to extract the component from the 'app' and then use props to bind to the array
+Step 2:  
+We need to extract the component from the 'app' and then use props to bind to the array
 
 ```jsx
 var Card = React.createClass({
-	render: function () {
-		return (
-			<div className="jumbotron">
-				<h1>{this.props.name}</h1>
-				<img src={this.props.avatar}/>
-			</div>
-		)
-	}
-})
+  render : function () {
+    return (
+      <div className="jumbotron">
+        <h1>{this.props.name}</h1>
+        <img src={this.props.avatar}/>
+      </div>
+    );
+  }
+});
 
 var App = React.createClass({
-	getInitialState: function() {
-		return {
-			people: people
-		}
-	},
-	render: function() {
-		return(
-			<div className="container">
-				{this.state.people.map(function(person) {
-					return (
-						<Card name={person.name} avatar={person.avatar}></Card>
-					)
-				})}
-			</div>
-		)
-	}
-})
+  getInitialState: function () {
+    return {
+      people: people
+    }
+  },
+  render: function () {
+    return(
+      <div className="container">
+      {this.state.people.map(function (person) {
+        return (
+          <Card name={person.name} avatar={person.avatar} />
+        );
+      })}
+      </div>
+    );
+  }
+});
 
 ReactDOM.render(
-  <App></App>,
+  <App />,
   document.getElementById('root')
 );
 ```
@@ -241,29 +242,50 @@ The items in our people array already have an id property, so we can use that fo
 
 ```jsx
 var App = React.createClass({
-	getInitialState: function() {
-		return {
-			people: people
-		}
-	},
-	render: function() {
-		return(
-			<div className="container">
-				{this.state.people.map(function(person) {
-					return (
-						<Card name={person.name} avatar={person.avatar} key={person.id}></Card>
-					)
-				})}
-			</div>
-		)
-	}
-})
+  getInitialState : function () {
+    return {
+      people : people
+    }
+  },
+  render : function () {
+    return(
+      <div className="container">
+      {this.state.people.map(function (person) {
+        return (
+          <Card name={person.name} avatar={person.avatar} key={person.id}></Card>
+        );
+      })}
+      </div>
+    );
+  }
+});
 ```
 
 ## Resources
-Great explanation of why you'd use webpack and babel, and what they do: 
+
+### Webpacks and Babel
+Great explanation of why you'd use both of them, and what they do: 
 
 * [https://tylermcginnis.com/react-js-tutorial-1-5-utilizing-webpack-and-babel-to-build-a-react-js-app-5f804d729d3b](https://tylermcginnis.com/react-js-tutorial-1-5-utilizing-webpack-and-babel-to-build-a-react-js-app-5f804d729d3b)
+
+### Flux
+[Flux](https://facebook.github.io/flux/docs/overview.html) is an architecture that Facebook uses internally when working with React. It is not a framework or a library. It is simply a new kind of architecture that complements React and the concept of Unidirectional Data Flow.
+
+That said, Facebook does provide a repo that includes a Dispatcher library. The dispatcher is a sort of global pub/sub handler that broadcasts payloads to registered callbacks.
+
+A typical Flux architecture will leverage this Dispatcher library, along with NodeJS’s EventEmitter module in order to set up an event system that helps manage an applications state.
+
+For a better explaination look here: [What is Flux?](http://fluxxor.com/what-is-flux.html)
+
+There are several alterative implementations including: Reflux, Redux, and Alt.
+
+Which one to pick? 
+[this](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux) is an interesting article about redux vs flux.
+
+And [Comparing all of them](http://jamesknelson.com/which-flux-implementation-should-i-use-with-react/).
+
+
+
 
 ## Conclusion
 
