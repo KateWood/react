@@ -115,10 +115,10 @@ This is what we have so far in `index.html`:
     <script src="build/react.js"></script>
     <script src="build/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-    <script type="text/babel" src="app.js"></script>
   </head>
   <body>
     <div id="root"></div>
+    <script type="text/babel" src="app.js"></script>
   </body>
 </html>
 ```
